@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rails Medical Reporting App | Abraar Arique</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if flash[:success] %>
+  <div class="alert alert-success fade in">
+    <%= link_to "&times;".html_safe, "#", data: {dismiss: "alert"}, "aria-label": "close", class: "close" %>
+    <p><%= flash[:success] %></p>
+  </div>
+<% end %>
+<% if flash[:error] %>
+  <div class="alert alert-danger fade in">
+    <%= link_to "&times;".html_safe, "#", data: {dismiss: "alert"}, "aria-label": "close", class: "close" %>
+    <p><%= flash[:error] %></p>
+  </div>
+<% end %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to "Rails Reporter", root_path, class: "navbar-brand" %>
+    </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><p class="navbar-btn"><%= link_to "New Record", new_record_path, class: "btn btn-primary" %></p></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<%= yield %>
+<br><br>
+<p class="text-muted text-center">Copyright &copy; 2015 Abraar Arique</p>
+</body>
+</html>

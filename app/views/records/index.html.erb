@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1>Medical Reporting Application Demo</h1>
+      <p>Built by Abraar Arique using Ruby on Rails</p>
+    </div>
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-bordered table-stripped table-hover">
+          <tr>
+            <th>Record ID</th>
+            <th>Reporter Name</th>
+            <th>Reporter Email</th>
+            <th>Report Description</th>
+            <th>Reported At</th>
+            <th>Actions</th>
+          </tr>
+          <% if not @records.empty? %>
+            <% @records.each do |record| %>
+              <tr>
+                <td><%= record.id %></td>
+                <td><%= record.reporter %></td>
+                <td><%= record.email %></td>
+                <td><%= record.description %></td>
+                <td><%= record.created_at %></td>
+                <td>
+                  <%= link_to "Edit", edit_record_path(record), class: "btn btn-primary" %>
+                  <%= link_to "Delete", record_path(record), method: :delete, class: "btn btn-danger" %>
+                </td>
+              </tr>
+            <% end %>
+          <% else %>
+            <tr>
+              <td colspan="6" class="text-center">
+                <p>Oops! There're no records here. Create some new records and come back again.</p>
+                <%= link_to "Create a New Record", new_record_path, class: "btn btn-info" %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+      <%= link_to "Export All Data in CSV (.csv) Format", records_path(format: :csv), class: "btn btn-block btn-info" %>
+      <%= link_to "Export All Data in Excel (.xls) Format", records_path(format: :xls), class: "btn btn-block btn-success" %>
+    </div>
+  </div>
+</div>
