@@ -1,9 +1,76 @@
-This is a Medical Reporting Application built using Ruby on Rails. This is a sample app and it uses SQLite instead of PostgreSQL.
+# Rails Reporting App
 
-To run this app locally do the following:
-  - Open a terminal window and `cd` to the directory of this app
-  - Run `bundle install` to install the gems and their dependencies
-  - Run `rake db:setup` and `rake db:migrate` to setup and migrate the database
-  - Then start the WEBrick server in development mode by running `rails server`
-  - Once the server is up and ready to receive connections, open up a browser window and navigate to the address http://localhost:3000/ and you'll be able to see the app
-  - You can optionally run `rspec --format doc` to see all the TDD tests and results
+## Introduction
+
+Rails Reporting App is a business report creation, management and exporting app built using Ruby on Rails. It's core features are the following:
+
+  - Create "Records"
+  - Add an ID, reporter name, email and description to a "Record"
+  - Add several records to create a complete report
+  - Export the whole report in CSV (.csv) format
+  - Export the whole report in Excel (.xls) format
+  - Supports creating, editing and deleting of "Records"
+
+---
+
+This app is built using:
+
+  - Ruby 2 (managed by RVM)
+  - Ruby on Rails 4
+  - PostgreSQL
+  - ERB/HTML5
+  - CSS3
+  - JavaScript
+  - jQuery
+  - Twitter Bootstrap
+  - RSpec, Capybara and FactoryGirl for testing
+  - Heroku
+  - Excel and CSV Exporting Gems
+
+## Installation Instructions:
+
+  - Make sure you have Ruby and Ruby on Rails installed
+  - Clone this repository into your local machine:
+
+    ```
+    $ git clone https://github.com/AbraarAriquePro/rails_reporting_app.git
+    ```
+  - Then change to the directory you just cloned:
+
+    ```
+    $ cd rails_reporting_app
+    ```
+  - Install all the Gems and their dependencies
+
+    ```
+    $ bundle install
+    ```
+  - Edit `database.yml` and add your own PostgreSQL username, password and other configurations
+  - Edit `secrets.yml` and add your own secrets key. You can generate Rails secrets keys by running `rake secret`
+  - Setup and migrate the database:
+
+    ```
+    $ rake db:setup
+    ```
+  - Precompile the assets:
+
+    ```
+    $ rake assets:precompile
+    ```
+  - Finally, fire up the WEBrick server
+
+    ```
+    $ rails server
+    ```
+
+Once the server is up and ready to receive connections, visit [http://localhost:3000/](http://localhost:3000) in your browser and you'll see the app up and running.
+
+## Contributing:
+This app is open for community contributions. Please follow the rules bellow to contribute:
+
+  - Fork this project
+  - Clone the forked project into your local machine
+  - Create a new branch, give it a name that reflects the feature you're working on
+  - Do work and commit the changes
+  - Push the changes up to your forked repository
+  - Open a Pull Request from the master branch
