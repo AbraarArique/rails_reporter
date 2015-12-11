@@ -11,13 +11,13 @@
 <body>
 <% if flash[:success] %>
   <div class="alert alert-success fade in">
-    <%= link_to "&times;".html_safe, "#", data: {dismiss: "alert"}, "aria-label": "close", class: "close" %>
+    <%= link_to "&times;".html_safe, "#", data: {dismiss: "alert"}, "aria-label" => "close", class: "close" %>
     <p><%= flash[:success] %></p>
   </div>
 <% end %>
 <% if flash[:error] %>
   <div class="alert alert-danger fade in">
-    <%= link_to "&times;".html_safe, "#", data: {dismiss: "alert"}, "aria-label": "close", class: "close" %>
+    <%= link_to "&times;".html_safe, "#", data: {dismiss: "alert"}, "aria-label" => "close", class: "close" %>
     <p><%= flash[:error] %></p>
   </div>
 <% end %>
