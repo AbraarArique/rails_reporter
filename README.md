@@ -1,8 +1,8 @@
-# Rails Reporting App
+# Rails Reporter
 
 ## Introduction
 
-Rails Reporting App is a business report creation, management and exporting app built using Ruby on Rails. It's core features are the following:
+Rails Reporter is a business report creation, management and exporting app built using Ruby on Rails. It's core features are the following:
 
   - Create "Records"
   - Add an ID, reporter name, email and description to a "Record"
@@ -33,12 +33,12 @@ This app is built using:
   - Clone this repository into your local machine:
 
     ```
-    $ git clone https://github.com/AbraarAriquePro/rails_reporting_app.git
+    $ git clone https://github.com/AbraarAriquePro/rails_reporter.git
     ```
   - Then change to the directory you just cloned:
 
     ```
-    $ cd rails_reporting_app
+    $ cd rails_reporter
     ```
   - Install all the Gems and their dependencies
 
